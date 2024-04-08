@@ -24,28 +24,29 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
+// todo move tab to shift on left 
 // -----------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | ESC  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | DEL  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// |      |  Q      | W      | E      |  R     |  T  |   |  Y  |  U   |  I  |  O  |  P  | DEL  |
+// | ESC  |  A/SHFT | S/SHFT | D/CTRL |  F/GUI |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | SHFT |  Z      | X      | C      |  V     |  B  |   |  N  |  M   |  ,  |  .  |  /  | BSPC |
+//                  | SHFT   | LWR    | SPC   | | ENT | RSE  | ALT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp ESC   HRML(A,   S,    D,   F) &kp G   &kp H HRMR(J,    K,        L,   SEMI)   &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp DEL
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+   &trans   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp DEL
+   &kp ESC  HRML(A,   S,    D,   F) &kp G   &kp H HRMR(J,    K,        L,   SEMI)   &kp SQT
+   &kp SHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp BSPC
+                  &kp SHFT &mo 1 &kp SPACE  &kp RET &mo 2 &kp RALT
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1   |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP    |
-// | ESC  | BT1  | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     | RGB_TOG |
-// | SHFT |      |     |     |     |     |   |     |     |     |     |     | BT_CLR  |
+// | TAB  |  1   |  2  |  3  |  4  |  5  |   |  6  |  7    |  8   |  9  |  0  | BKSP    |
+// | ESC  | BT1  | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN   | UP   | RGT |     | RGB_TOG |
+// | SHFT |      |     |     |     |     |   |     | PGDWN | PGUP |     |     | BT_CLR  |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &kp ESC  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &rgb_ug RGB_TOG
-   &kp LSHFT  &trans   &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &bt BT_CLR
+   &kp ESC  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &kp LEFT &kp DOWN   &kp UP &kp RIGHT &trans &rgb_ug RGB_TOG
+   &kp LSHFT  &trans   &trans       &trans       &trans       &trans         &trans   &PAGE_DOWN &PAGE_UP &trans    &trans &bt BT_CLR
                                     &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
