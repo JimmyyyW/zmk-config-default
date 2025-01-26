@@ -14,6 +14,10 @@
 #define HRMR(k1,k2,k3,k4) &mt RGUI k1 &mt RCTRL k2 &mt RALT  k3 &mt RSHFT k4
 #define COMBINED 3
 
+&nice_view_spi {
+    cs-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>;
+};
+
 &mt {
   tapping-term-ms = <200>;
   quick_tap_ms = <0>;
